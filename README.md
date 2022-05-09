@@ -1,1 +1,1 @@
-# 100DEVS 
+# 100DEVS homework repository
