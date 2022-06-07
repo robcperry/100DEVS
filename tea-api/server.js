@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
-const cors =require('cors')
+const cors = require('cors')
 const PORT = 8000
 
 app.use(cors())
 
 
-const tea = {
+let tea = {
     'oolong':{
         'teaType' : 'black' ,
         'origin': 'africa',
@@ -46,7 +46,7 @@ app.get('/', (request,response)=>{
 
 app.get('/api/:name',(request,response)=>{
     
-    const teaName = request.perams.name.toLowerCase()
+    const teaName = request.params.name.toLowerCase()
     if(tea[teaName]){
         response.json(tea[teaName])
     }else{
@@ -60,3 +60,5 @@ app.get('/api/:name',(request,response)=>{
 app.listen(process.env.PORT || PORT, () =>{
     console.log(`catch me if you can on ${PORT}`)
 });
+
+
